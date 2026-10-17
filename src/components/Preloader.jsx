@@ -7,7 +7,7 @@ import { pad } from '../lib/format.js';
 
 const WORD = 'SALTFIRE';
 const ORDER = 'SFAILRTE'; // letters arrive slightly out of order
-const FRAMES = Array.from({ length: 8 }, (_, i) => `/images/preloader-${i + 1}.jpg`);
+const FRAMES = Array.from({ length: 8 }, (_, i) => `images/preloader-${i + 1}.jpg`);
 
 // 0 letters + flipbook · 1 window collapses · 2 letters drop · 3 curtain lifts
 export default function Preloader({ onDone }) {

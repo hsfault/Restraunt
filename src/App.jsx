@@ -50,11 +50,17 @@ export default function App() {
 
   return (
     <MotionConfig reducedMotion="user">
-      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-curtain focus:rounded-lg focus:bg-bone focus:px-4 focus:py-3 focus:text-ink">
+      <a
+        href="#main"
+        onClick={(e) => {
+          e.preventDefault();
+          document.getElementById('main')?.focus();
+        }}
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-curtain focus:rounded-lg focus:bg-bone focus:px-4 focus:py-3 focus:text-ink">
         Skip to content
       </a>
       <Navbar />
-      <div id="main">
+      <div id="main" tabIndex={-1} className="outline-none">
         <AnimatePresence mode="wait" onExitComplete={resetScroll}>
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />

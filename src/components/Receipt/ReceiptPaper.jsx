@@ -37,7 +37,7 @@ function Banner() {
       {failed ? (
         <div className="receipt-banner-fallback absolute inset-0" />
       ) : (
-        <img src="/images/receipt-banner.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" onError={() => setFailed(true)} />
+        <img src="images/receipt-banner.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" onError={() => setFailed(true)} />
       )}
       <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-full border border-white/30 bg-white/15 px-3 py-1 text-[10px] tracking-[0.2em] text-white backdrop-blur-md">
         · KITCHEN &amp; BAR ·

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion, PresenceContext } from 'framer-motion';
 import { useUI } from '../store/ui.js';
 import { ease } from '../lib/motion.js';
 
@@ -9,6 +9,13 @@ export const labelFor = (path) => PAGE_LABELS[path] ?? 'LOST';
 function Label() {
   const label = useUI((s) => s.destLabel);
   return <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-ink">{label}</span>;
+}
+
+// Page content opts out of route presence: only the curtains below decide when
+// the old page may unmount. Otherwise any exit or layoutId animation inside a page
+// (e.g. a sliding tab pill) can stall AnimatePresence and the route never changes.
+function Content({ children }) {
+  return <PresenceContext.Provider value={null}>{children}</PresenceContext.Provider>;
 }
 
 // A bone curtain rises over the old page, the scroll resets while covered,
@@ -21,7 +28,7 @@ export default function PageTransition({ children }) {
   if (reduced) {
     return (
       <>
-        {children}
+        <Content>{children}</Content>
         <motion.div aria-hidden className={base} initial={{ opacity: first ? 0 : 1 }} animate={{ opacity: 0 }} exit={{ opacity: 1 }} transition={{ duration: 0.35 }}>
           <Label />
         </motion.div>
@@ -31,7 +38,7 @@ export default function PageTransition({ children }) {
 
   return (
     <>
-      {children}
+      <Content>{children}</Content>
       {/* Exit: rises from the bottom to cover. */}
       <motion.div
         aria-hidden

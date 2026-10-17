@@ -25,7 +25,7 @@ function Lines({ style }) {
 function StaticFire() {
   return (
     <section id="fire" className="relative h-[100svh] overflow-hidden" aria-label="The fire">
-      <Img src="/images/fire-hearth.jpg" alt={ALT} className="absolute inset-0 h-full w-full object-cover" />
+      <Img src="images/fire-hearth.jpg" alt={ALT} className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-transparent" />
       <h2 className="section-title absolute left-5 top-[18vh] md:left-12">
         Cooked over <span className="serif-em">oak</span>.
@@ -78,7 +78,7 @@ export default function FireScene() {
     <section id="fire" ref={ref} className="relative h-[250vh] bg-ink" aria-label="The fire">
       <div className="sticky top-0 h-[100svh] overflow-hidden">
         <motion.div className="absolute inset-0" style={{ clipPath }}>
-          <Img animated src="/images/fire-hearth.jpg" alt={ALT} className="h-full w-full object-cover" style={{ scale: imgScale }} />
+          <Img animated src="images/fire-hearth.jpg" alt={ALT} className="h-full w-full object-cover" style={{ scale: imgScale }} />
           <motion.div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/10" style={{ opacity: shade }} />
           <Lines style={lineStyle} />
         </motion.div>

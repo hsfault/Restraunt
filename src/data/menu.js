@@ -17,7 +17,7 @@ const item = (id, category, name, desc, price, tags = [], chefsPick = false) => 
   price,
   tags,
   chefsPick,
-  image: `/images/menu-${id}.jpg`,
+  image: `images/menu-${id}.jpg`,
 });
 
 export const menu = [

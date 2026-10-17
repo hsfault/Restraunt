@@ -60,7 +60,7 @@ export const fireLines = ['1,200°F at the heart of the coals.', 'No gas. No sho
 export const chef = {
   name: 'Chef Daniyal Rehman',
   title: 'CHEF–OWNER · HEAD OF FIRE',
-  image: '/images/chef.jpg',
+  image: 'images/chef.jpg',
   // Words wrapped in *asterisks* are set in serif italic ember.
   manifesto: [
     'I learned to cook on a *coal* angithi in my grandmother’s courtyard in Sialkot.',

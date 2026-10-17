@@ -9,7 +9,6 @@ export function useHashLink() {
     if (hash && (path || '/') === pathname) {
       e.preventDefault();
       scrollToTarget(`#${hash}`);
-      window.history.replaceState(null, '', `#${hash}`);
     }
     after?.();
   };

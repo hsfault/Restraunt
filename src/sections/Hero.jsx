@@ -75,7 +75,7 @@ export default function Hero() {
                     >
                       <span className="spin-slow block h-full w-full overflow-hidden rounded-full [clip-path:circle(50%)]">
                         <Img
-                          src="/images/hero-plate.jpg"
+                          src="images/hero-plate.jpg"
                           alt="Charred lamb chops on dark stone with smoked labneh, pomegranate and herb oil, seen from above"
                           eager
                           fetchpriority="high"
