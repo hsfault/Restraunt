@@ -16,8 +16,6 @@ import BagPage from './pages/Bag.jsx';
 import ReservePage from './pages/Reserve.jsx';
 import NotFound from './pages/NotFound.jsx';
 
-export const INTRO_KEY = 'saltfire-intro';
-
 export default function App() {
   const location = useLocation();
   const [preloader, setPreloader] = useState(() => useUI.getState().intro === 'running');
@@ -38,14 +36,7 @@ export default function App() {
     useUI.getState().setNavigated();
   }, [location.pathname]);
 
-  const onIntroDone = useCallback(() => {
-    try {
-      sessionStorage.setItem(INTRO_KEY, '1');
-    } catch {
-      /* private mode: the intro simply plays again next time */
-    }
-    setPreloader(false);
-  }, []);
+  const onIntroDone = useCallback(() => setPreloader(false), []);
 
   return (
     <MotionConfig reducedMotion="user">

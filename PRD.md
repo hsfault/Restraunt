@@ -73,7 +73,7 @@ Grain: fixed full-screen SVG `feTurbulence` noise at 4% opacity, `pointer-events
 
 | Component | Spec |
 |---|---|
-| **Preloader** | Once per session (`sessionStorage`). Bone layer; ember "SALTFIRE" Archivo 900 ~9vw. Phase 1 (0–2.4s): letters rise out of order S,F,A,I,L,R,T,E; a torn-edge window between SALT/FIRE flips 8 images every 90ms; mono counter 000→100 eased, top-right. Phase 2 (2.4–3.0s): window scaleX→0, gap closes, letters drop out (0.03s stagger). Phase 3 (3.0–3.7s): bone layer lifts via `clip-path inset(0 0 100% 0)`; hero wordmark rises 0.15s before the curtain finishes. Skipped with reduced motion. |
+| **Preloader** | Every full page load (not on in-app route changes). Bone layer; ember "SALTFIRE" Archivo 900 ~9vw. Phase 1 (0–2.4s): letters rise out of order S,F,A,I,L,R,T,E; a torn-edge window between SALT/FIRE flips 8 images every 90ms; mono counter 000→100 eased, top-right. Phase 2 (2.4–3.0s): window scaleX→0, gap closes, letters drop out (0.03s stagger). Phase 3 (3.0–3.7s): bone layer lifts via `clip-path inset(0 0 100% 0)`; hero wordmark rises 0.15s before the curtain finishes. Skipped with reduced motion. |
 | **Navbar** | Glass pill: fixed top 16px, max 1080px, h 60, r 18, `rgba(21,19,17,.55)` + blur(18) saturate(140%), hairline border + inset highlight. Logo flame SVG + wordmark; links Menu ▾, Story, Chef's Table, Private Dining ▾, Visit; search circle, bag with spring badge, Reserve (bone). Underline grows left→right in, exits right. Dropdown panels (glass, y −8→0, 0.25s, 120ms close delay): Menu = 3 columns (category, clip-reveal image, 4 dish links); Private Dining = 3 rooms. **Search**: circle morphs (layout) into 280px input, pill widens with layout spring; live filter of `menu.js`, max 5 results (thumb, name, price), arrows/Enter/click → `/menu#id`; Esc/× closes; opens with `/` or Ctrl/Cmd+K. Hides on scroll down, shows on up; bg opacity rises after 80px. Mobile: logo, bag, 44px hamburger (2 lines → X) → full-screen ink overlay, curtain drop, giant links 12vw with 01–05 indices, footer with hours/address/Reserve. |
 | **Cursor** | Fine pointers only. 10px ember dot, lerp 0.18. `data-cursor="view|drag|open|reserve"` → 84px circle with mono label (spring). Links → 6px. |
 | **PageTransition** | Bone curtain rises from bottom (0.6s primary), tiny ink mono page name centre, scroll to top while covered, curtain continues up and off; page title letters rise. `AnimatePresence mode="wait"`. |
@@ -158,7 +158,7 @@ index.css — fonts, vars, grain, print stylesheet, thin ember scrollbar
 
 ## 11. Acceptance
 
-- Preloader plays once/session, skipped on reduced motion.
+- Preloader plays on every full page load, skipped on reduced motion.
 - Search filters real data, deep-links, keyboard (/ , Ctrl/Cmd+K, Esc, ↑↓, Enter).
 - Coverflow: drag, swipe, keys, autoplay, ambient colour, layout-morph modal, Add to bag.
 - Anatomy scrub separates and reassembles; mobile fallback.
