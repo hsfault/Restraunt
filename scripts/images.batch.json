@@ -1,0 +1,436 @@
+[
+  {
+    "prompt": "charred lamb chops on a dark round stone plate with a smoked labneh swoosh, scattered pomegranate seeds, drops of green herb oil, flaky sea salt, perfectly top-down overhead view, single round plate centered, plate fully inside the frame with margin, pure black background, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/hero-plate.jpg",
+    "width": 1024,
+    "height": 1024,
+    "seed": 101
+  },
+  {
+    "prompt": "open wood-fire hearth in a restaurant kitchen, glowing oak coals, heavy iron grill grates, cooks' hands turning metal skewers of meat, orange sparks in the air, smoke, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/fire-hearth.jpg",
+    "width": 1920,
+    "height": 1088,
+    "seed": 102
+  },
+  {
+    "prompt": "oak-smoked chicken tikka on the bone with a blackened burnt lime half, pickled red onion, on a dark stone plate, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/dish-1.jpg",
+    "width": 1024,
+    "height": 1280,
+    "seed": 201
+  },
+  {
+    "prompt": "whole charred seabass with blistered skin, bright green chutney, charred lemon, on a dark oval plate, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/dish-2.jpg",
+    "width": 1024,
+    "height": 1280,
+    "seed": 202
+  },
+  {
+    "prompt": "pulled lamb shoulder raan piled on blistered ember-roasted flatbread, raw onion and sumac, glistening juices, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/dish-3.jpg",
+    "width": 1024,
+    "height": 1280,
+    "seed": 203
+  },
+  {
+    "prompt": "whole charred cauliflower with a blackened crust, black lime tahini, crispy chickpeas, parsley oil, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/dish-4.jpg",
+    "width": 1024,
+    "height": 1280,
+    "seed": 204
+  },
+  {
+    "prompt": "wagyu seekh kebab on a flat iron skewer resting over glowing coals, melting bone marrow butter, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/dish-5.jpg",
+    "width": 1024,
+    "height": 1280,
+    "seed": 205
+  },
+  {
+    "prompt": "ember-roasted aubergine split open, cold white yoghurt, red chilli oil, pomegranate seeds, on dark ceramic, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/dish-6.jpg",
+    "width": 1024,
+    "height": 1280,
+    "seed": 206
+  },
+  {
+    "prompt": "smoked kulfi dessert on a dark plate, crushed pistachio, glossy burnt honey, wisps of smoke, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/dish-7.jpg",
+    "width": 1024,
+    "height": 1280,
+    "seed": 207
+  },
+  {
+    "prompt": "a single empty dark basalt stone plate, nothing on it, perfectly top-down overhead view, single round plate centered, plate fully inside the frame with margin, pure black background, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/layer-1-plate.jpg",
+    "width": 1024,
+    "height": 1024,
+    "seed": 301
+  },
+  {
+    "prompt": "a single swoosh of smoked white labneh only, isolated on black, no plate, perfectly top-down overhead view, single round plate centered, plate fully inside the frame with margin, pure black background, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/layer-2-labneh.jpg",
+    "width": 1024,
+    "height": 1024,
+    "seed": 302
+  },
+  {
+    "prompt": "three charred french-trimmed lamb chops only, arranged in a circle, isolated on black, no plate, perfectly top-down overhead view, single round plate centered, plate fully inside the frame with margin, pure black background, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/layer-3-chops.jpg",
+    "width": 1024,
+    "height": 1024,
+    "seed": 303
+  },
+  {
+    "prompt": "only scattered drops of green herb oil and ruby pomegranate seeds in a loose circle, isolated on black, no plate, perfectly top-down overhead view, single round plate centered, plate fully inside the frame with margin, pure black background, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/layer-4-oil.jpg",
+    "width": 1024,
+    "height": 1024,
+    "seed": 304
+  },
+  {
+    "prompt": "only a light scattering of micro herbs and flaky white sea salt crystals in a loose circle, isolated on black, no plate, perfectly top-down overhead view, single round plate centered, plate fully inside the frame with margin, pure black background, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/layer-5-garnish.jpg",
+    "width": 1024,
+    "height": 1024,
+    "seed": 305
+  },
+  {
+    "prompt": "bowl of smoked labneh with apricot oil and za'atar crisps, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-smoked-labneh.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 401
+  },
+  {
+    "prompt": "whole blackened charred leeks split open, brown butter, hazelnut dukkah, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-charred-leek.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 402
+  },
+  {
+    "prompt": "hand-cut beef tartare with chapli spice, cured egg yolk, toasted lavash shards, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-chapli-tartare.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 403
+  },
+  {
+    "prompt": "seared kalari cheese with blistered cherry tomatoes and basil oil in a small iron pan, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-kalari-tomato.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 404
+  },
+  {
+    "prompt": "charred tiger prawns with black lime butter on a dark plate, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-ember-prawns.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 405
+  },
+  {
+    "prompt": "two shami kebab sliders on toasted milk buns with mint chutney and raw onion, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-shami-sliders.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 406
+  },
+  {
+    "prompt": "charred octopus tentacle on warm chickpea puree with chilli crumb, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-grilled-octopus.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 407
+  },
+  {
+    "prompt": "charred lamb chops with smoked labneh, pomegranate seeds and herb oil, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-lamb-chops.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 408
+  },
+  {
+    "prompt": "smoky chicken tikka pieces with a blackened lime, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-chicken-tikka.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 409
+  },
+  {
+    "prompt": "whole grilled seabass with green chutney on a dark plate, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-seabass.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 410
+  },
+  {
+    "prompt": "pulled lamb raan on flatbread, onions and mint, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-lamb-raan.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 411
+  },
+  {
+    "prompt": "two wagyu seekh kebabs on flat skewers over coals, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-wagyu-seekh.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 412
+  },
+  {
+    "prompt": "charred cauliflower steak with tahini and black lime, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-charred-cauliflower.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 413
+  },
+  {
+    "prompt": "roasted aubergine with yoghurt and chilli oil, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-ember-aubergine.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 414
+  },
+  {
+    "prompt": "sliced oak-fired ribeye steak with a glossy dark jus and bone marrow, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-oak-ribeye.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 415
+  },
+  {
+    "prompt": "two glazed spatchcock quails with sumac onions, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-spatchcock-quail.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 416
+  },
+  {
+    "prompt": "round saffron taftan bread brushed with ghee, golden and blistered, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-saffron-taftan.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 417
+  },
+  {
+    "prompt": "blistered garlic naan torn open with charred green chillies, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-garlic-naan.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 418
+  },
+  {
+    "prompt": "stack of whole wheat roti with nigella seeds, charred spots, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-kalonji-roti.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 419
+  },
+  {
+    "prompt": "smoked yakhni pulao rice in a copper pot with crispy onions, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-smoked-pulao.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 420
+  },
+  {
+    "prompt": "herb rice with dried black lime and fried garlic in a dark bowl, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-black-lime-rice.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 421
+  },
+  {
+    "prompt": "smoked kulfi with pistachio and burnt honey, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-smoked-kulfi.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 422
+  },
+  {
+    "prompt": "carrot halwa with a scoop of brown butter ice cream, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-gajar-halwa.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 423
+  },
+  {
+    "prompt": "slice of burnt basque cheesecake with apricot jam, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-basque-cheesecake.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 424
+  },
+  {
+    "prompt": "crisp kunafa with rose syrup and crushed pistachio, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-ash-kunafa.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 425
+  },
+  {
+    "prompt": "charred halved peaches with labneh and honey drizzle, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-charred-stonefruit.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 426
+  },
+  {
+    "prompt": "zero-proof old fashioned in a heavy glass with a big ice cube, orange peel, smoke swirling, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-smoke-old-fashioned.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 427
+  },
+  {
+    "prompt": "tall glass of black lime tonic with ice and a charred lemon strip, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-black-lime-tonic.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 428
+  },
+  {
+    "prompt": "deep purple black carrot kanji drink in a glass with a charred orange wheel, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-burnt-orange-kanji.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 429
+  },
+  {
+    "prompt": "salted lassi in a clay cup with roasted cumin on top, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-smoked-lassi.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 430
+  },
+  {
+    "prompt": "pink kashmiri chai in a small glass with crushed pistachio, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-kashmiri-chai.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 431
+  },
+  {
+    "prompt": "falsa berry sharbat with soda, charred lemon and basil seeds in a glass, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/menu-hearth-sharbat.jpg",
+    "width": 768,
+    "height": 960,
+    "seed": 432
+  },
+  {
+    "prompt": "portrait of a Pakistani male chef in a black apron standing beside a glowing wood-fire hearth, face in partial shadow, arms crossed, cinematic, face visible, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/chef.jpg",
+    "width": 1024,
+    "height": 1408,
+    "seed": 501
+  },
+  {
+    "prompt": "a long candle-lit private dining table set for eighteen, dark oak, linen, low brass candlesticks, warm restaurant room, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/private-1.jpg",
+    "width": 1600,
+    "height": 1008,
+    "seed": 601
+  },
+  {
+    "prompt": "a moody restaurant bar with copper bottles and copper shelves backlit, dark stone counter, no people, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/private-2.jpg",
+    "width": 1008,
+    "height": 1408,
+    "seed": 602
+  },
+  {
+    "prompt": "hearth-side counter seating with leather stools facing an open wood fire in a restaurant, no people, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/private-3.jpg",
+    "width": 1200,
+    "height": 1200,
+    "seed": 603
+  },
+  {
+    "prompt": "a restaurant terrace at night with warm string lights, set tables, plants, Lahore evening, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/private-4.jpg",
+    "width": 1600,
+    "height": 1008,
+    "seed": 604
+  },
+  {
+    "prompt": "a dark wine and bottle wall behind a small private dining table, candle light, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/private-5.jpg",
+    "width": 1008,
+    "height": 1408,
+    "seed": 605
+  },
+  {
+    "prompt": "an elegant plated tasting menu course on matte dark stone, tweezered garnish, small portion, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/private-6.jpg",
+    "width": 1200,
+    "height": 1200,
+    "seed": 606
+  },
+  {
+    "prompt": "macro of orange flames licking upward, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/preloader-1.jpg",
+    "width": 600,
+    "height": 800,
+    "seed": 701
+  },
+  {
+    "prompt": "a metal skewer of meat on glowing coals, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/preloader-2.jpg",
+    "width": 600,
+    "height": 800,
+    "seed": 702
+  },
+  {
+    "prompt": "a sizzling cast iron pan with spitting oil, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/preloader-3.jpg",
+    "width": 600,
+    "height": 800,
+    "seed": 703
+  },
+  {
+    "prompt": "a hand sprinkling flaky salt from above, hand only, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/preloader-4.jpg",
+    "width": 600,
+    "height": 800,
+    "seed": 704
+  },
+  {
+    "prompt": "a naan blistering on a clay tandoor wall, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/preloader-5.jpg",
+    "width": 600,
+    "height": 800,
+    "seed": 705
+  },
+  {
+    "prompt": "smoke curling in a dark room, backlit, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/preloader-6.jpg",
+    "width": 600,
+    "height": 800,
+    "seed": 706
+  },
+  {
+    "prompt": "a cocktail glass with a smoked rosemary garnish, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/preloader-7.jpg",
+    "width": 600,
+    "height": 800,
+    "seed": 707
+  },
+  {
+    "prompt": "extreme macro of a glowing coal ember with fine ash, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/preloader-8.jpg",
+    "width": 600,
+    "height": 800,
+    "seed": 708
+  },
+  {
+    "prompt": "abstract flowing ember-red and orange flame silk texture, smooth gradient folds, editorial food photography, low-key dramatic lighting, deep black shadows, warm ember rim light, matte dark stone, shallow depth of field, rich realistic textures, 35mm film grain, no text, no watermark, no logo, no people's faces unless specified",
+    "out": "../../public/images/receipt-banner.jpg",
+    "width": 800,
+    "height": 160,
+    "seed": 801
+  }
+]
