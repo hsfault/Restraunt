@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import PageTransition from '../components/PageTransition.jsx';
 import Ticker from '../components/Ticker.jsx';
 import Footer from '../components/Footer.jsx';
+import FilmPlayer from '../components/FilmPlayer.jsx';
 import { Stack, Panel } from '../components/Stack.jsx';
 import Hero from '../sections/Hero.jsx';
 import FireScene from '../sections/FireScene.jsx';
@@ -64,6 +65,7 @@ export default function Home() {
         </Stack>
       </main>
       <Footer />
+      <FilmPlayer />
     </PageTransition>
   );
 }

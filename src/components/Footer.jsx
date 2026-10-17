@@ -123,7 +123,7 @@ function GiantWordmark() {
   const letters = Array.from(brand.name);
   const size = fontSize ?? '19vw';
   return (
-    <div ref={containerRef} className="relative mt-16 overflow-hidden" style={{ height: fontSize ? fontSize * 0.66 : '13vw' }} aria-hidden>
+    <div ref={containerRef} className="relative overflow-hidden" style={{ height: fontSize ? fontSize * 0.84 : '16vw' }} aria-hidden>
       <div ref={textRef} className="wordmark flex w-max whitespace-nowrap" style={{ fontSize: size }}>
         {letters.map((c, i) => (
           <span key={i} className="mask">
@@ -159,8 +159,11 @@ function GiantWordmark() {
 export default function Footer() {
   const hash = useHashLink();
   return (
-    <footer id="visit" className="relative z-10 bg-ink px-4 pt-24 md:px-8 md:pt-32">
-      <div className="flex items-start justify-between gap-6 text-[clamp(2.2rem,5vw,5.5rem)] font-bold leading-[0.92] tracking-[-0.03em]">
+    <footer id="visit" className="relative z-10 bg-ink px-4 pt-16 md:px-8 md:pt-24">
+      {/* The wordmark leads into the footer, edge to edge. */}
+      <GiantWordmark />
+
+      <div className="mt-16 flex items-start justify-between gap-6 border-t border-bone/10 pt-16 text-[clamp(2.2rem,5vw,5.5rem)] font-bold leading-[0.92] tracking-[-0.03em]">
         <p>
           <span className="block text-bone">{brand.footerLine[0]}</span>
           <span className="block text-ash">{brand.footerLine[1]}</span>
@@ -219,9 +222,7 @@ export default function Footer() {
 
       <GramStrip />
 
-      <GiantWordmark />
-
-      <div className="flex flex-col gap-3 border-t border-bone/10 py-6 font-mono text-[11px] uppercase tracking-[0.12em] text-ash sm:flex-row sm:items-center sm:justify-between">
+      <div className="mt-16 flex flex-col gap-3 border-t border-bone/10 py-6 font-mono text-[11px] uppercase tracking-[0.12em] text-ash sm:flex-row sm:items-center sm:justify-between">
         <p>© 2026 SALTFIRE · Gulberg III, Lahore · {brand.tagline}</p>
         <ul className="flex gap-5">
           {brand.socials.map((s) => (

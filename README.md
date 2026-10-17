@@ -60,6 +60,7 @@ Prefer the terminal? `npm i -g vercel`, then run `vercel` in the project folder 
 ## Tips
 
 - The splash screen plays on every full page load. It's skipped if your OS has "reduce motion" turned on.
+- The round ember button (bottom-left of the home page) plays the homepage as a film: it glides through each section with cinematic chapter cuts. Scroll, swipe or press an arrow key to pause; the dots on its bar jump between chapters. Chapter names, lines and timings are at the top of `src/components/FilmPlayer.jsx`.
 - The bag is saved in your browser, so it survives a refresh.
 - Payments are fake. Use any 16-digit card number, e.g. `4242 4242 4242 4242`, a future expiry like `12/29` and any 3-digit CVC.
 - Turning on "reduce motion" in your OS settings switches the site to its calm, low-animation version.

@@ -8,7 +8,7 @@ export function Stack({ children }) {
   const items = Children.toArray(children).filter(Boolean);
   const refs = useMemo(() => items.map(() => createRef()), [items.length]); // eslint-disable-line react-hooks/exhaustive-deps
   return (
-    <div className="relative isolate">
+    <div className="relative isolate" data-stack>
       {items.map((child, i) => (
         <StackItem key={child.key ?? i} index={i} selfRef={refs[i]} nextRef={refs[i + 1]}>
           {child}
