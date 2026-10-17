@@ -1,0 +1,5 @@
+[
+  {"prompt": "warm, inviting modern restaurant interior, wooden tables, soft evening light, photorealistic", "out": "home/hero.jpg", "width": 1600, "height": 900, "seed": 1},
+  {"prompt": "wood-fired margherita pizza on a rustic table, top-down food photography", "out": "menu/pizza.jpg", "width": 800, "height": 800, "seed": 2},
+  {"prompt": "chef plating a dish in a busy open kitchen, candid, shallow depth of field", "out": "about/chef.jpg", "width": 1200, "height": 800, "seed": 3}
+]
