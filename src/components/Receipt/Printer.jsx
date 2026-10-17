@@ -151,7 +151,7 @@ function Scene({ data, onClose }) {
 
   return (
     <motion.div
-      className="fixed inset-0 z-modal"
+      className="theme-dark fixed inset-0 z-modal"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

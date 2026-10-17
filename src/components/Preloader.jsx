@@ -51,7 +51,7 @@ export default function Preloader({ onDone }) {
 
   return (
     <motion.div
-      className="fixed inset-0 z-preloader flex items-center justify-center bg-bone"
+      className="fixed inset-0 z-preloader flex items-center justify-center bg-[#EDE6DA]"
       initial={{ clipPath: 'inset(0% 0% 0% 0%)' }}
       animate={{ clipPath: stage >= 3 ? 'inset(0% 0% 100% 0%)' : 'inset(0% 0% 0% 0%)' }}
       transition={{ duration: 0.7, ease: ease.primary }}
@@ -67,7 +67,7 @@ export default function Preloader({ onDone }) {
             <Fragment key={i}>
               {i === 4 && (
                 <motion.span
-                  className="torn relative mx-[0.05em] inline-block h-[0.82em] overflow-hidden bg-ink"
+                  className="torn relative mx-[0.05em] inline-block h-[0.82em] overflow-hidden bg-coal"
                   initial={{ width: '0.7em', scaleX: 1 }}
                   animate={stage >= 1 ? { width: '0em', scaleX: 0, marginLeft: 0, marginRight: 0 } : { width: '0.7em', scaleX: 1 }}
                   transition={{ duration: 0.45, ease: ease.primary }}

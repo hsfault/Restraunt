@@ -64,7 +64,7 @@ export default function MenuPreview() {
       <div className="grid gap-8 md:grid-cols-12">
         <div className="md:col-span-5">
           <p className="meta mb-4 text-ash">— The menu</p>
-          <SplitText as="h2" text="Thirty-two plates. *One* fire." className="section-title block max-w-[10ch]" />
+          <SplitText as="h2" text="Thirty-two plates. *One* fire." className="section-title block max-w-[10ch] text-[clamp(2.4rem,4.4vw,5.4rem)]" />
           <p className="mt-6 max-w-[36ch] text-[14px] leading-relaxed text-ash">
             Small plates to start, something from the coals, bread from the clay. Order the way Lahore eats: everything in the middle.
           </p>

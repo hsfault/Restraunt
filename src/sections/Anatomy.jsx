@@ -50,17 +50,25 @@ function Steps({ active }) {
   );
 }
 
+// Orthographic isometric view done in 2D: each disc carries the tilt itself and
+// is lifted by the distance translateZ would project to. No shared 3D context,
+// so browsers can't flatten the stack, and the labels share the exact same lift.
+const lift = (i, s) => -SIN * i * (6 + (GAP - 6) * s);
+const TILT = 'rotateX(58deg) rotateZ(-38deg)';
+
 function Layer({ layer, i, sep, size }) {
-  const z = useTransform(sep, (s) => i * (6 + (GAP - 6) * s));
+  const y = useTransform(sep, (s) => lift(i, s));
   return (
-    <motion.div className="absolute inset-0" style={{ z, mixBlendMode: i === 0 ? 'normal' : 'screen' }}>
-      <Img src={layer.image} alt="" eager className="h-full w-full rounded-full object-cover [clip-path:circle(47%)]" style={{ width: size, height: size }} />
+    <motion.div className="absolute" style={{ y, left: -size / 2, top: -size / 2, width: size, height: size, mixBlendMode: i === 0 ? 'normal' : 'screen' }}>
+      <div className="h-full w-full" style={{ transform: TILT }}>
+        <Img src={layer.image} alt="" eager className="h-full w-full rounded-full object-cover [clip-path:circle(47%)]" />
+      </div>
     </motion.div>
   );
 }
 
 function Label({ layer, i, sep, shown, size }) {
-  const y = useTransform(sep, (s) => -SIN * i * (6 + (GAP - 6) * s));
+  const y = useTransform(sep, (s) => lift(i, s));
   return (
     <motion.div className="pointer-events-none absolute -mt-[5px] flex items-center" style={{ y, x: size * 0.36 }}>
       <svg width="90" height="10" className="-mt-px overflow-visible" aria-hidden>
@@ -112,20 +120,9 @@ function Pinned() {
               style={{ opacity: flash, scale: flashScale, background: 'radial-gradient(circle, rgba(255,91,31,0.55) 0%, rgba(255,154,77,0.15) 40%, transparent 70%)' }}
               aria-hidden
             />
-            <div
-              className="preserve-3d absolute"
-              style={{
-                width: size,
-                height: size,
-                left: -size / 2,
-                top: -size / 2,
-                transform: 'rotateX(58deg) rotateZ(-38deg)',
-              }}
-            >
-              {anatomy.map((l, i) => (
-                <Layer key={l.id} layer={l} i={i} sep={sep} size={size} />
-              ))}
-            </div>
+            {anatomy.map((l, i) => (
+              <Layer key={l.id} layer={l} i={i} sep={sep} size={size} />
+            ))}
             {anatomy.map((l, i) => (
               <Label key={l.id} layer={l} i={i} sep={sep} shown={i <= labelsOn} size={size} />
             ))}

@@ -11,12 +11,19 @@ export function useFitText({ max = Infinity, min = 0 } = {}) {
     const text = textRef.current;
     if (!container || !text) return undefined;
     const measure = () => {
+      // Measure at a known size, then write the result straight back: React won't
+      // re-render (and restore the style) when the computed size is unchanged.
+      const previous = text.style.fontSize;
       text.style.fontSize = '100px';
-      const w = text.scrollWidth;
+      const w = text.offsetWidth; // w-max box: in-flow letters only, not the overhanging plate
       const available = container.clientWidth;
-      text.style.fontSize = '';
-      if (!w) return;
-      setSize(Math.max(min, Math.min(max, (100 * available) / w)));
+      if (!w || !available) {
+        text.style.fontSize = previous;
+        return;
+      }
+      const next = Math.max(min, Math.min(max, (100 * available) / w));
+      text.style.fontSize = `${next}px`;
+      setSize(next);
     };
     measure();
     document.fonts?.ready.then(measure);

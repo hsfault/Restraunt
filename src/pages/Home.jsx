@@ -40,7 +40,7 @@ export default function Home() {
           <Panel key="signature" aria-label="Signature dishes">
             <Coverflow />
           </Panel>
-          <Panel key="anatomy">
+          <Panel key="anatomy" tone="dark">
             <Anatomy />
           </Panel>
           <Panel key="menu" aria-label="Menu preview">

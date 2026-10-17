@@ -7,7 +7,7 @@ export default function FlameMark({ className = 'h-5 w-5' }) {
         fill="#FF5B1F"
       />
       <path d="M12 11.4c.4 1.4 2 2.2 2 4.1a2 2 0 0 1-4 0c0-.9.5-1.6 1-2 .1.6.4 1 .8 1.2-.1-1.1 0-2.2.2-3.3Z" fill="#FF9A4D" />
-      <path d="M5 21h9M17 21h2" stroke="#EDE6DA" strokeWidth="1.4" strokeLinecap="round" />
+      <path d="M5 21h9M17 21h2" className="stroke-bone" strokeWidth="1.4" strokeLinecap="round" />
     </svg>
   );
 }

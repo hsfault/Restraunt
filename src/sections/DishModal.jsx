@@ -28,7 +28,7 @@ export default function DishModal({ dish, onClose }) {
 
   return createPortal(
     <div className="fixed inset-0 z-modal flex items-center justify-center p-3 md:p-8">
-      <motion.div className="absolute inset-0 bg-ink/80" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.4 }} onClick={onClose} />
+      <motion.div className="absolute inset-0 bg-coal/60 backdrop-blur-sm" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.4 }} onClick={onClose} />
       <div
         ref={ref}
         role="dialog"

@@ -18,7 +18,10 @@ export function emphasisWords(text) {
     if (!part) return;
     const em = part.startsWith('*') && part.endsWith('*');
     const clean = em ? part.slice(1, -1) : part;
-    clean.split(/\s+/).filter(Boolean).forEach((w) => out.push({ text: w, em }));
+    const words = clean.split(/\s+/).filter(Boolean);
+    // Punctuation straight after *emphasis* ("*restraint*.") belongs to that word.
+    if (!em && out.length && words.length && !/^\s/.test(clean)) out[out.length - 1].text += words.shift();
+    words.forEach((w) => out.push({ text: w, em }));
   });
   return out;
 }

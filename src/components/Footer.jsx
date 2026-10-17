@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { brand } from '../data/brand.js';
 import { useFitText } from '../lib/useFitText.js';
+import RevealImage from './RevealImage.jsx';
 import { useHashLink } from '../lib/useHashLink.js';
 import { ease } from '../lib/motion.js';
 
@@ -83,13 +84,48 @@ function Newsletter() {
   );
 }
 
+const GRAM = [
+  { src: 'images/fire-hearth.jpg', alt: 'Skewers turning over the oak hearth' },
+  { src: 'images/menu-smoke-old-fashioned.jpg', alt: 'A zero-proof old fashioned under a cloud of smoke' },
+  { src: 'images/chef.jpg', alt: 'Chef Daniyal Rehman beside the fire' },
+  { src: 'images/dish-2.jpg', alt: 'Whole charred seabass with green chutney' },
+  { src: 'images/private-4.jpg', alt: 'The terrace at night under string lights' },
+  { src: 'images/preloader-5.jpg', alt: 'Naan blistering on the tandoor wall' },
+];
+
+function GramStrip() {
+  return (
+    <div className="mt-16">
+      <div className="mb-4 flex items-baseline justify-between gap-4">
+        <p className="meta text-ash">
+          On the gram · <span className="text-bone">@saltfire.lhr</span>
+        </p>
+        <a href={brand.socials[0].href} target="_blank" rel="noreferrer" className="meta flex min-h-[44px] items-center text-bone hover:text-ember">
+          Follow ↗
+        </a>
+      </div>
+      <ul className="grid grid-cols-3 gap-2 md:grid-cols-6 md:gap-3">
+        {GRAM.map((g, i) => (
+          <li key={g.src}>
+            <a href={brand.socials[0].href} target="_blank" rel="noreferrer" className="group block overflow-hidden rounded-xl bg-smoke" data-cursor="open">
+              <RevealImage src={g.src} alt={g.alt} ratio="1 / 1" delay={i * 0.06} imgClassName="transition-transform duration-700 ease-ui group-hover:scale-110" />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 function GiantWordmark() {
   const { containerRef, textRef, fontSize } = useFitText({ min: 60 });
   const inView = useInView(containerRef, { once: true, margin: '0px 0px -5% 0px' });
+  const letters = Array.from(brand.name);
+  const size = fontSize ?? '19vw';
   return (
     <div ref={containerRef} className="relative mt-16 overflow-hidden" style={{ height: fontSize ? fontSize * 0.66 : '13vw' }} aria-hidden>
-      <div ref={textRef} className="wordmark flex w-max whitespace-nowrap" style={{ fontSize: fontSize ?? '19vw' }}>
-        {Array.from(brand.name).map((c, i) => (
+      <div ref={textRef} className="wordmark flex w-max whitespace-nowrap" style={{ fontSize: size }}>
+        {letters.map((c, i) => (
           <span key={i} className="mask">
             <motion.span
               className="metal inline-block"
@@ -102,9 +138,20 @@ function GiantWordmark() {
           </span>
         ))}
       </div>
-      <div className="pointer-events-none absolute inset-0 overflow-hidden mix-blend-overlay">
-        <div className="footer-sweep absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-white/80 to-transparent" />
-      </div>
+      {/* Same letters, untransformed, so one text-clipped highlight can sweep the whole word. */}
+      <motion.div
+        className="metal-sweep wordmark pointer-events-none absolute left-0 top-0 flex w-max whitespace-nowrap"
+        style={{ fontSize: size }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: inView ? 1 : 0 }}
+        transition={{ duration: 0.6, delay: 1.4 }}
+      >
+        {letters.map((c, i) => (
+          <span key={i} className="inline-block">
+            {c}
+          </span>
+        ))}
+      </motion.div>
     </div>
   );
 }
@@ -169,6 +216,8 @@ export default function Footer() {
           <Newsletter />
         </div>
       </div>
+
+      <GramStrip />
 
       <GiantWordmark />
 

@@ -63,7 +63,7 @@ function Lightbox({ item, onClose }) {
   useScrollLock(true, 'lightbox');
   const shape = SHAPES[item.shape];
   return createPortal(
-    <div className="fixed inset-0 z-modal flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label={item.title} ref={ref}>
+    <div className="theme-dark fixed inset-0 z-modal flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label={item.title} ref={ref}>
       <motion.div className="absolute inset-0 bg-ink/90" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onClose} />
       <div className="relative flex max-h-full w-full flex-col items-center">
         <motion.div

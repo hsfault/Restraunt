@@ -178,30 +178,30 @@ export default function Coverflow() {
         transition={{ duration: 0.5, ease: ease.ui }}
       >
         <div className="glass-card flex max-w-full items-center gap-0.5 rounded-full p-1.5">
-          <button type="button" onClick={() => go(-1)} className="grid h-11 w-11 place-items-center rounded-full hover:bg-white/10" aria-label="Previous dish">
+          <button type="button" onClick={() => go(-1)} className="grid h-11 w-11 place-items-center rounded-full hover:bg-white/60" aria-label="Previous dish">
             <ChevronLeft className="h-4 w-4" />
           </button>
           <button
             type="button"
             onClick={() => setPlaying((p) => !p)}
-            className="relative grid h-11 w-11 place-items-center rounded-full hover:bg-white/10"
+            className="relative grid h-11 w-11 place-items-center rounded-full hover:bg-white/60"
             aria-label={playing ? 'Pause autoplay' : 'Play autoplay'}
             aria-pressed={playing}
           >
             {playing ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
-            <span className="absolute bottom-1.5 left-3 right-3 h-[2px] overflow-hidden rounded-full bg-white/10">
+            <span className="absolute bottom-1.5 left-3 right-3 h-[2px] overflow-hidden rounded-full bg-bone/10">
               <motion.span className="block h-full origin-left bg-ember" style={{ scaleX: progress }} />
             </span>
           </button>
-          <button type="button" onClick={() => go(1)} className="grid h-11 w-11 place-items-center rounded-full hover:bg-white/10" aria-label="Next dish">
+          <button type="button" onClick={() => go(1)} className="grid h-11 w-11 place-items-center rounded-full hover:bg-white/60" aria-label="Next dish">
             <ChevronRight className="h-4 w-4" />
           </button>
-          <span className="mx-1.5 h-6 w-px bg-white/10" />
+          <span className="mx-1.5 h-6 w-px bg-bone/10" />
           <div className="flex min-w-0 items-center gap-2.5 pr-1" aria-live="polite">
             <Img src={dish.image} alt="" className="h-8 w-8 shrink-0 rounded-lg object-cover" />
             <span className="hidden max-w-[11rem] truncate text-[13px] text-bone sm:block">{dish.name}</span>
           </div>
-          <span className="mx-1.5 h-6 w-px bg-white/10" />
+          <span className="mx-1.5 h-6 w-px bg-bone/10" />
           <span className="whitespace-nowrap px-2 font-mono text-[12px] tabular text-bone">
             {pad(active + 1)} <span className="text-ash">/ {pad(N)}</span>
           </span>

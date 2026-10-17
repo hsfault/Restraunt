@@ -1,5 +1,5 @@
-import { Children, createRef, useLayoutEffect, useMemo, useState } from 'react';
-import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
+import { Children, createRef, useEffect, useLayoutEffect, useMemo, useState } from 'react';
+import { motion, useMotionValue, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 
 // Sections slide over each other. Each item sticks once its bottom meets the
@@ -36,22 +36,45 @@ function StackItem({ children, index, selfRef, nextRef }) {
     };
   }, [selfRef]);
 
-  const { scrollYProgress } = useScroll({ target: nextRef ?? selfRef, offset: ['start end', 'start start'] });
+  // How far the next panel has slid over this one (0 → 1). Read from the live
+  // rect: useScroll's offset maths misplaces sticky targets and reports 1.
+  const { scrollY } = useScroll();
+  const scrollYProgress = useMotionValue(0);
+  useEffect(() => {
+    const update = () => {
+      const next = nextRef?.current;
+      if (!next) return;
+      const top = next.getBoundingClientRect().top;
+      const vh = window.innerHeight;
+      scrollYProgress.set(Math.min(1, Math.max(0, (vh - top) / vh)));
+    };
+    update();
+    const unsub = scrollY.on('change', update);
+    window.addEventListener('resize', update);
+    return () => {
+      unsub();
+      window.removeEventListener('resize', update);
+    };
+  }, [nextRef, scrollY, scrollYProgress]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.96]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
+  // Dim with brightness, not opacity: a translucent panel would reveal the
+  // stuck panels underneath it.
+  const filter = useTransform(scrollYProgress, (v) => (v < 0.002 ? 'none' : `brightness(${(1 - 0.24 * v).toFixed(3)})`));
   const covered = Boolean(nextRef) && !reduced;
 
   return (
     <div ref={selfRef} className={`sticky ${index > 0 ? '-mt-8' : ''}`} style={{ top, zIndex: index + 1 }}>
-      <motion.div style={covered ? { scale, opacity, transformOrigin: '50% 100%' } : undefined}>{children}</motion.div>
+      <motion.div style={covered ? { scale, filter, transformOrigin: '50% 100%' } : undefined}>{children}</motion.div>
     </div>
   );
 }
 
+// The notch takes its fill from the panel's own tokens, so it matches in dark islands too.
 const TONES = {
-  char: { bg: 'bg-char', fill: '#151311', text: 'text-ash' },
-  ember: { bg: 'bg-ember', fill: '#FF5B1F', text: 'text-ink/70' },
-  ink: { bg: 'bg-ink', fill: '#0B0A09', text: 'text-ash' },
+  char: { bg: 'bg-char', fill: 'fill-char', text: 'text-ash' },
+  ember: { bg: 'bg-ember', fill: 'fill-ember', text: 'text-coal/70' },
+  ink: { bg: 'bg-ink', fill: 'fill-ink', text: 'text-ash' },
+  dark: { bg: 'theme-dark bg-char', fill: 'fill-char', text: 'text-ash' },
 };
 
 export function PanelNotch({ tone = 'char' }) {
@@ -59,7 +82,7 @@ export function PanelNotch({ tone = 'char' }) {
   return (
     <div className="pointer-events-none absolute -top-[35px] left-1/2 z-10 h-9 w-[140px] -translate-x-1/2" aria-hidden>
       <svg viewBox="0 0 140 36" className="absolute inset-0 h-full w-full">
-        <path d="M0 36 C 24 36 30 32 38 20 C 46 7 54 0 70 0 C 86 0 94 7 102 20 C 110 32 116 36 140 36 Z" fill={t.fill} />
+        <path d="M0 36 C 24 36 30 32 38 20 C 46 7 54 0 70 0 C 86 0 94 7 102 20 C 110 32 116 36 140 36 Z" className={t.fill} />
       </svg>
       <span className={`absolute inset-x-0 top-[13px] flex items-center justify-center gap-1 font-mono text-[9px] uppercase tracking-[0.18em] ${t.text}`}>
         <ArrowDown className="h-2.5 w-2.5" strokeWidth={2} />

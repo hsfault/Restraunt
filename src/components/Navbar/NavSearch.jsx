@@ -129,7 +129,7 @@ export default function NavSearch() {
             id="nav-search-results"
             role="listbox"
             className="glass-nav absolute right-0 top-[calc(100%+20px)] w-[340px] overflow-hidden rounded-2xl p-1.5"
-            style={{ backgroundColor: 'rgba(21,19,17,0.86)' }}
+            style={{ backgroundColor: 'rgba(250,247,242,0.94)' }}
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}

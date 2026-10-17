@@ -80,7 +80,7 @@ export default function BagDrawer() {
     <AnimatePresence>
       {open && (
         <div className="fixed inset-0 z-drawer">
-          <motion.div className="absolute inset-0 bg-ink/70" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={close} />
+          <motion.div className="absolute inset-0 bg-coal/40" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={close} />
           <motion.aside
             ref={panel}
             role="dialog"

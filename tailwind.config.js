@@ -10,16 +10,21 @@ export default {
       '2xl': '1536px',
     },
     extend: {
+      // Role tokens backed by CSS variables (see index.css): `ink` is the page
+      // ground, `bone` the main text. The site is light; `.theme-dark` flips a subtree.
       colors: {
-        ink: '#0B0A09',
-        char: '#151311',
-        smoke: '#221F1B',
-        bone: '#EDE6DA',
-        ash: '#948B80',
-        ember: '#FF5B1F',
-        glow: '#FF9A4D',
-        saffron: '#F2B441',
+        ink: 'rgb(var(--ink) / <alpha-value>)',
+        char: 'rgb(var(--char) / <alpha-value>)',
+        smoke: 'rgb(var(--smoke) / <alpha-value>)',
+        bone: 'rgb(var(--bone) / <alpha-value>)',
+        ash: 'rgb(var(--ash) / <alpha-value>)',
+        ember: 'rgb(var(--ember) / <alpha-value>)',
+        glow: 'rgb(var(--glow) / <alpha-value>)',
+        saffron: 'rgb(var(--saffron) / <alpha-value>)',
         paper: '#FAF8F3',
+        // Fixed, theme-independent ends of the palette.
+        coal: '#0B0A09',
+        cream: '#F6F2EB',
       },
       fontFamily: {
         sans: ['Archivo', 'ui-sans-serif', 'system-ui', 'sans-serif'],

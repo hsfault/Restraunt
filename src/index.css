@@ -3,25 +3,39 @@
 @tailwind utilities;
 
 :root {
-  --ink: #0b0a09;
-  --char: #151311;
-  --smoke: #221f1b;
-  --bone: #ede6da;
-  --ash: #948b80;
-  --ember: #ff5b1f;
-  --glow: #ff9a4d;
-  --saffron: #f2b441;
-  --paper: #faf8f3;
+  /* Light "Bone & Ember": the whole site matches the bone splash screen.
+     Values are RGB channels so Tailwind can apply alpha (bg-ink/60). */
+  --ink: 246 242 235; /* page ground */
+  --char: 237 231 220; /* raised panels */
+  --smoke: 222 213 199; /* hover surfaces */
+  --bone: 23 19 15; /* main text */
+  --ash: 117 108 97; /* secondary text */
+  --ember: 255 91 31;
+  --glow: 255 154 77;
+  --saffron: 214 146 22;
+  --line: 23 19 15; /* hairlines */
   --ease-primary: cubic-bezier(0.76, 0, 0.24, 1);
   --ease-ui: cubic-bezier(0.22, 1, 0.36, 1);
   --nav-h: 60px;
+  color-scheme: light;
+}
+
+/* Dark islands: the fire scene, the anatomy stage, the receipt printer, lightboxes. */
+.theme-dark {
+  --ink: 11 10 9;
+  --char: 21 19 17;
+  --smoke: 34 31 27;
+  --bone: 237 230 218;
+  --ash: 148 139 128;
+  --saffron: 242 180 65;
+  color: rgb(var(--bone));
   color-scheme: dark;
 }
 
 @layer base {
   html {
-    background: var(--ink);
-    color: var(--bone);
+    background: rgb(var(--ink));
+    color: rgb(var(--bone));
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -34,8 +48,8 @@
     min-height: 100svh;
   }
   ::selection {
-    background: var(--ember);
-    color: var(--ink);
+    background: rgb(var(--ember));
+    color: rgb(var(--ink));
   }
   img {
     user-select: none;
@@ -48,7 +62,7 @@
     outline: none;
   }
   :focus-visible {
-    outline: 2px solid var(--ember);
+    outline: 2px solid rgb(var(--ember));
     outline-offset: 3px;
     border-radius: 6px;
   }
@@ -89,7 +103,7 @@ html.has-cursor textarea {
 /* Thin ember scrollbar */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--ember) transparent;
+  scrollbar-color: rgb(var(--ember)) transparent;
 }
 ::-webkit-scrollbar {
   width: 6px;
@@ -99,7 +113,7 @@ html.has-cursor textarea {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--ember);
+  background: rgb(var(--ember));
   border-radius: 99px;
 }
 
@@ -133,7 +147,7 @@ html.has-cursor textarea {
     @apply font-mono text-meta uppercase;
   }
   .rule {
-    border-color: rgb(237 230 218 / 0.1);
+    border-color: rgb(var(--bone) / 0.1);
   }
   /* Masks used by text reveals; padding keeps descenders and italics unclipped. */
   .mask {
@@ -154,17 +168,18 @@ html.has-cursor textarea {
     border-radius: 999px 999px 24px 24px;
   }
   .glass-nav {
-    background: rgba(21, 19, 17, 0.55);
+    background: rgba(250, 247, 242, 0.62);
     -webkit-backdrop-filter: blur(18px) saturate(140%);
     backdrop-filter: blur(18px) saturate(140%);
-    border: 1px solid rgba(237, 230, 218, 0.08);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 20px 50px -20px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(23, 19, 15, 0.08);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 18px 44px -24px rgba(23, 19, 15, 0.35);
   }
   .glass-card {
-    background: rgba(255, 255, 255, 0.06);
-    -webkit-backdrop-filter: blur(14px);
-    backdrop-filter: blur(14px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.42);
+    -webkit-backdrop-filter: blur(14px) saturate(130%);
+    backdrop-filter: blur(14px) saturate(130%);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 24px 60px -30px rgba(23, 19, 15, 0.45);
   }
   .tap {
     min-width: 44px;
@@ -176,21 +191,21 @@ html.has-cursor textarea {
     height: 1px;
     margin: 0 0.75rem;
     transform: translateY(-0.3em);
-    background-image: radial-gradient(circle, rgb(148 139 128 / 0.6) 1px, transparent 1.2px);
+    background-image: radial-gradient(circle, rgb(var(--ash) / 0.7) 1px, transparent 1.2px);
     background-size: 6px 2px;
     background-repeat: repeat-x;
     background-position: left center;
   }
   .btn-ember {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-ember px-6 font-medium text-ink transition-colors duration-300 ease-ui hover:bg-glow;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-ember px-6 font-medium text-cream transition-colors duration-300 ease-ui hover:bg-coal;
     min-height: 48px;
   }
   .btn-bone {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-bone px-5 font-medium text-ink transition-colors duration-300 ease-ui hover:bg-white;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-bone px-5 font-medium text-ink transition-colors duration-300 ease-ui hover:bg-ember hover:text-cream;
     min-height: 44px;
   }
   .btn-ink {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-ink px-6 font-medium text-bone transition-colors duration-300 ease-ui hover:bg-smoke;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-coal px-6 font-medium text-cream transition-colors duration-300 ease-ui hover:bg-[#2b241d];
     min-height: 48px;
   }
   .chip {
@@ -207,7 +222,7 @@ html.has-cursor textarea {
   .field:focus ~ .field-label,
   .field:not(:placeholder-shown) ~ .field-label {
     transform: translateY(-20px) scale(0.9);
-    color: var(--bone);
+    color: rgb(var(--bone));
   }
 }
 
@@ -234,7 +249,7 @@ html.has-cursor textarea {
   height: 200%;
   pointer-events: none;
   opacity: 0.04;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.09 0 0 0 0 0.07 0 0 0 0 0.05 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   animation: grain 1.2s steps(6) infinite;
 }
 @keyframes grain {
@@ -278,13 +293,13 @@ html.has-cursor textarea {
 
 /* Brushed-metal footer wordmark with a sweeping highlight */
 .metal {
-  background: linear-gradient(180deg, #ede6da 0%, #c9c1b5 45%, #8a8379 100%);
+  background: linear-gradient(180deg, #2a241e 0%, #17130f 40%, #6d645a 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 .metal-sweep {
-  background: linear-gradient(105deg, transparent 40%, rgb(255 255 255 / 0.55) 50%, transparent 60%) no-repeat;
+  background: linear-gradient(105deg, transparent 42%, rgb(255 154 77 / 0.9) 50%, transparent 58%) no-repeat;
   background-size: 250% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -363,13 +378,18 @@ html.has-cursor textarea {
   }
 }
 
-@keyframes footer-sweep {
-  0% { transform: translateX(-120%); }
-  45%, 100% { transform: translateX(380%); }
+
+.spin-reverse {
+  animation: spin-slow 70s linear infinite reverse;
 }
-.footer-sweep {
-  animation: footer-sweep 6s var(--ease-primary) infinite;
+@keyframes scroll-cue {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+.scroll-cue {
+  animation: scroll-cue 1.8s var(--ease-primary) infinite;
 }
 @media (prefers-reduced-motion: reduce) {
-  .footer-sweep { animation: none; opacity: 0; }
+  .spin-reverse,
+  .scroll-cue { animation: none; }
 }

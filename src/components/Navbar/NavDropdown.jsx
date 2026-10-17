@@ -60,7 +60,7 @@ export default function NavDropdown({ kind, onEnter, onLeave, close }) {
   return (
     <motion.div
       className="absolute left-0 right-0 top-full mx-auto mt-2 w-[min(760px,calc(100vw-24px))] rounded-[18px] p-5 glass-nav"
-      style={{ backgroundColor: 'rgba(21,19,17,0.82)' }}
+      style={{ backgroundColor: 'rgba(250,247,242,0.92)' }}
       initial={{ opacity: 0, y: -8 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -8 }}

@@ -25,14 +25,14 @@ export default function Numbers() {
     <div className="px-3 pb-16 pt-20 md:px-6 md:pb-20 md:pt-24">
       <p className="meta mb-6 px-1 text-ash md:px-4">— By the numbers</p>
       <div className="flex flex-col gap-3 md:flex-row md:items-stretch">
-        <div className="flex min-h-[340px] flex-col justify-between rounded-[24px] bg-ember p-6 text-ink md:min-h-[520px] md:w-[40%] md:p-9">
-          <p className="meta text-ink/70">Gulberg III · Lahore</p>
+        <div className="flex min-h-[340px] flex-col justify-between rounded-[24px] bg-ember p-6 text-coal md:min-h-[520px] md:w-[40%] md:p-9">
+          <p className="meta text-coal/70">Gulberg III · Lahore</p>
           <div>
             <p className="font-mono text-[clamp(5rem,13vw,11rem)] font-bold leading-[0.85] tracking-[-0.06em]">
               <Count from={1990} to={year.value} format={(v) => String(v)} />
             </p>
             <p className="mt-4 text-2xl font-semibold tracking-[-0.02em]">{year.label}</p>
-            <p className="mt-1 max-w-[30ch] text-[14px] text-ink/70">{year.sub}</p>
+            <p className="mt-1 max-w-[30ch] text-[14px] text-coal/70">{year.sub}</p>
           </div>
         </div>
         <div className="flex flex-1 flex-col gap-3">

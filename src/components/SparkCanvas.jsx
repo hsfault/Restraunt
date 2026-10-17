@@ -4,7 +4,7 @@ import { useReducedMotion } from 'framer-motion';
 const COLORS = ['255,236,214', '255,255,255', '255,190,140', '43,14,4'];
 
 // ~60 sparks drifting upward. Pauses when off-screen or with reduced motion.
-export default function SparkCanvas({ count = 60, className = '' }) {
+export default function SparkCanvas({ count = 60, className = '', colors = COLORS, speed = 1 }) {
   const ref = useRef(null);
   const reduced = useReducedMotion();
 
@@ -22,10 +22,10 @@ export default function SparkCanvas({ count = 60, className = '' }) {
       p.x = Math.random() * w;
       p.y = initial ? Math.random() * h : h + 10;
       p.r = 0.6 + Math.random() * 1.9;
-      p.vy = 0.25 + Math.random() * 0.9;
+      p.vy = (0.25 + Math.random() * 0.9) * speed;
       p.phase = Math.random() * Math.PI * 2;
       p.sway = 0.2 + Math.random() * 0.6;
-      p.c = COLORS[Math.floor(Math.random() * COLORS.length)];
+      p.c = colors[Math.floor(Math.random() * colors.length)];
       p.a = 0.3 + Math.random() * 0.6;
       return p;
     };
@@ -78,7 +78,7 @@ export default function SparkCanvas({ count = 60, className = '' }) {
       io.disconnect();
       ro.disconnect();
     };
-  }, [count, reduced]);
+  }, [count, reduced, colors, speed]);
 
   return <canvas ref={ref} aria-hidden className={`pointer-events-none absolute inset-0 h-full w-full ${className}`} />;
 }

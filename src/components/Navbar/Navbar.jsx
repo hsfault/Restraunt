@@ -146,7 +146,7 @@ export default function Navbar() {
             transition={spring}
             aria-label="Primary"
             className="glass-nav flex h-[60px] items-center justify-between pl-4 pr-2 lg:justify-start lg:gap-8"
-            style={{ borderRadius: 18, backgroundColor: scrolled || mobileMenu ? 'rgba(21,19,17,0.82)' : 'rgba(21,19,17,0.55)' }}
+            style={{ borderRadius: 18, backgroundColor: scrolled || mobileMenu ? 'rgba(250,247,242,0.86)' : 'rgba(250,247,242,0.6)' }}
           >
             <motion.div layout="position">
               <Link to="/" className="flex min-h-[44px] items-center gap-2" aria-label="SALTFIRE, home">
