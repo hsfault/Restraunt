@@ -1,4 +1,4 @@
-import { Children, createRef, useEffect, useLayoutEffect, useMemo, useState } from 'react';
+import { Children, createContext, createRef, useContext, useEffect, useLayoutEffect, useMemo, useState } from 'react';
 import { motion, useMotionValue, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 
@@ -57,17 +57,22 @@ function StackItem({ children, index, selfRef, nextRef }) {
     };
   }, [nextRef, scrollY, scrollYProgress]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.96]);
-  // Dim with brightness, not opacity: a translucent panel would reveal the
-  // stuck panels underneath it.
-  const filter = useTransform(scrollYProgress, (v) => (v < 0.002 ? 'none' : `brightness(${(1 - 0.24 * v).toFixed(3)})`));
+  // Panels dim through an overlay (see Panel) rather than opacity, which would
+  // reveal the stuck panels underneath, or a filter, which repaints every frame.
+  const dim = useTransform(scrollYProgress, [0, 1], [0, 0.22]);
   const covered = Boolean(nextRef) && !reduced;
 
   return (
     <div ref={selfRef} className={`sticky ${index > 0 ? '-mt-8' : ''}`} style={{ top, zIndex: index + 1 }}>
-      <motion.div style={covered ? { scale, filter, transformOrigin: '50% 100%' } : undefined}>{children}</motion.div>
+      <motion.div style={covered ? { scale, transformOrigin: '50% 100%' } : undefined}>
+        <CoverContext.Provider value={covered ? dim : null}>{children}</CoverContext.Provider>
+      </motion.div>
     </div>
   );
 }
+
+// How far the next panel has covered this one, as an overlay opacity (or null).
+const CoverContext = createContext(null);
 
 // The notch takes its fill from the panel's own tokens, so it matches in dark islands too.
 const TONES = {
@@ -94,10 +99,14 @@ export function PanelNotch({ tone = 'char' }) {
 
 export function Panel({ id, tone = 'char', className = '', innerClassName = '', notch = true, children, ...rest }) {
   const t = TONES[tone];
+  const dim = useContext(CoverContext);
   return (
     <section id={id} className={`relative rounded-t-[28px] md:mx-3 md:rounded-t-[32px] ${t.bg} ${className}`} {...rest}>
       {notch && <PanelNotch tone={tone} />}
-      <div className={`relative rounded-t-[28px] [overflow:clip] md:rounded-t-[32px] ${innerClassName}`}>{children}</div>
+      <div className={`relative rounded-t-[28px] [overflow:clip] md:rounded-t-[32px] ${innerClassName}`}>
+        {children}
+        {dim && <motion.div aria-hidden className="pointer-events-none absolute inset-0 z-20 bg-coal" style={{ opacity: dim }} />}
+      </div>
     </section>
   );
 }

@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Img from './Img.jsx';
 import { ease } from '../lib/motion.js';
 
-// 260x320 image that trails the cursor (lerp 0.12) and tilts with its speed.
+// 260x320 image that follows the cursor (lerp 0.25) and tilts with its speed.
 export default function HoverImage({ item }) {
   const box = useRef(null);
   useEffect(() => {
@@ -17,10 +17,10 @@ export default function HoverImage({ item }) {
       target.y = e.clientY;
     };
     const loop = () => {
-      const dx = (target.x - pos.x) * 0.12;
+      const dx = (target.x - pos.x) * 0.25;
       pos.x += dx;
-      pos.y += (target.y - pos.y) * 0.12;
-      rot += (Math.max(-8, Math.min(8, dx * 0.6)) - rot) * 0.15;
+      pos.y += (target.y - pos.y) * 0.25;
+      rot += (Math.max(-8, Math.min(8, dx * 0.35)) - rot) * 0.15;
       if (box.current) box.current.style.transform = `translate3d(${pos.x + 28}px, ${pos.y - 160}px, 0) rotate(${rot.toFixed(2)}deg)`;
       raf = requestAnimationFrame(loop);
     };

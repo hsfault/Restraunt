@@ -107,7 +107,7 @@ function GramStrip() {
       <ul className="grid grid-cols-3 gap-2 md:grid-cols-6 md:gap-3">
         {GRAM.map((g, i) => (
           <li key={g.src}>
-            <a href={brand.socials[0].href} target="_blank" rel="noreferrer" className="group block overflow-hidden rounded-xl bg-smoke" data-cursor="open">
+            <a href={brand.socials[0].href} target="_blank" rel="noreferrer" className="group block overflow-hidden rounded-xl bg-smoke">
               <RevealImage src={g.src} alt={g.alt} ratio="1 / 1" delay={i * 0.06} imgClassName="transition-transform duration-700 ease-ui group-hover:scale-110" />
             </a>
           </li>
@@ -181,7 +181,7 @@ export default function Footer() {
           <a href={brand.phoneHref} className="mt-2 flex min-h-[44px] items-center font-mono text-[13px] text-bone hover:text-ember">
             {brand.phone}
           </a>
-          <a href={brand.mapUrl} target="_blank" rel="noreferrer" className="meta flex min-h-[44px] items-center text-ash hover:text-bone" data-cursor="open">
+          <a href={brand.mapUrl} target="_blank" rel="noreferrer" className="meta flex min-h-[44px] items-center text-ash hover:text-bone">
             Open in maps ↗
           </a>
         </div>

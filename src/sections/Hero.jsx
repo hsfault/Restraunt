@@ -197,7 +197,7 @@ function PlateRig({ ready, delay, progress, tiltX, tiltY }) {
           animate={ready ? { opacity: 1, scale: 1, rotate: 0 } : {}}
           transition={{ duration: 1.8, ease: ease.ui, delay: delay + 0.2 }}
         >
-          <span className="spin-slow block h-full w-full overflow-hidden rounded-full [clip-path:circle(50%)]">
+          <span className="spin-slow block h-full w-full overflow-hidden rounded-full">
             <Img
               src="images/hero-plate.jpg"
               alt="Charred lamb chops on dark stone with smoked labneh, pomegranate and herb oil, seen from above"
@@ -314,7 +314,7 @@ export default function Hero() {
           </span>
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 16 }} animate={ready ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, ease: ease.ui, delay: after + 0.2 }}>
-          <MagneticButton to="/reserve" className="btn-ember h-14 px-7 text-[15px]" cursor="reserve">
+          <MagneticButton to="/reserve" className="btn-ember h-14 px-7 text-[15px]">
             Reserve a table
             <ArrowUpRight className="h-4 w-4" />
           </MagneticButton>

@@ -64,7 +64,7 @@ export default function MobileMenu({ open, close }) {
                 {brand.phone}
               </a>
             </div>
-            <Link to="/reserve" onClick={close} className="btn-ember col-span-2 w-full" data-cursor="reserve">
+            <Link to="/reserve" onClick={close} className="btn-ember col-span-2 w-full">
               Reserve a table
             </Link>
           </motion.div>

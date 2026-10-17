@@ -6,7 +6,8 @@ const locks = new Set();
 
 export function initLenis({ smooth }) {
   if (lenis || !smooth) return lenis;
-  lenis = new Lenis({ lerp: 0.09, wheelMultiplier: 1, smoothWheel: true });
+  // lerp 0.14 (brief said 0.09): lower values felt floaty and laggy on the wheel.
+  lenis = new Lenis({ lerp: 0.14, wheelMultiplier: 1, smoothWheel: true });
   const raf = (time) => {
     lenis?.raf(time);
     requestAnimationFrame(raf);

@@ -22,10 +22,12 @@ const rgba = (hex, a) => {
 function pose(off, md) {
   const a = Math.abs(off);
   const s = Math.sign(off);
-  if (a === 0) return { x: '0%', rotateY: 0, scale: 1, opacity: 1, filter: 'brightness(1) blur(0px)' };
-  if (a === 1) return { x: `${s * 62}%`, rotateY: -s * (md ? 38 : 20), scale: 0.82, opacity: 1, filter: 'brightness(0.6) blur(0px)' };
-  if (a === 2 && md) return { x: `${s * 105}%`, rotateY: -s * 48, scale: 0.68, opacity: 0.5, filter: 'brightness(0.6) blur(2px)' };
-  return { x: `${s * (md ? 130 : 110)}%`, rotateY: -s * 55, scale: 0.55, opacity: 0, filter: 'brightness(0.5) blur(2px)' };
+  // `shade` darkens side cards through an overlay: animated CSS filters (and
+  // backdrop blur) on seven 3D cards repaint every frame and made scrolling stutter.
+  if (a === 0) return { pose: { x: '0%', rotateY: 0, scale: 1, opacity: 1 }, shade: 0 };
+  if (a === 1) return { pose: { x: `${s * 62}%`, rotateY: -s * (md ? 38 : 20), scale: 0.82, opacity: 1 }, shade: 0.4 };
+  if (a === 2 && md) return { pose: { x: `${s * 105}%`, rotateY: -s * 48, scale: 0.68, opacity: 0.5 }, shade: 0.45 };
+  return { pose: { x: `${s * (md ? 130 : 110)}%`, rotateY: -s * 55, scale: 0.55, opacity: 0 }, shade: 0.5 };
 }
 
 const isTyping = (el) => el instanceof HTMLElement && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA');
@@ -111,7 +113,7 @@ export default function Coverflow() {
         </p>
       </div>
 
-      <div className="relative mt-10 h-[400px] md:mt-14 md:h-[clamp(500px,40vw,600px)]" style={{ perspective: 1400 }} data-cursor={selected ? undefined : 'drag'}>
+      <div className="relative mt-10 h-[400px] md:mt-14 md:h-[clamp(500px,40vw,600px)]" style={{ perspective: 1400 }}>
         <motion.div
           className="relative h-full preserve-3d"
           drag={selected ? false : 'x'}
@@ -129,7 +131,7 @@ export default function Coverflow() {
             let off = i - active;
             if (off > N / 2) off -= N;
             if (off < -N / 2) off += N;
-            const target = pose(off, md);
+            const { pose: target, shade } = pose(off, md);
             const hidden = selected && off !== 0;
             return (
               <motion.div
@@ -145,16 +147,15 @@ export default function Coverflow() {
                   type="button"
                   onClick={() => onCard(i, off)}
                   tabIndex={Math.abs(off) <= 1 ? 0 : -1}
-                  className="glass-card block w-full rounded-[22px] p-2 text-left"
+                  className="relative block w-full rounded-[22px] border border-white/80 bg-white/75 p-2 text-left shadow-[0_24px_60px_-30px_rgba(23,19,15,0.45)]"
                   aria-label={off === 0 ? `View ${d.name}` : `Show ${d.name}`}
-                  data-cursor={off === 0 ? 'view' : undefined}
                 >
                   {selected?.id === d.id ? (
                     <div className="aspect-[4/5]" />
                   ) : (
                     <motion.div layoutId={`dish-img-${d.id}`} className="relative aspect-[4/5] overflow-hidden" style={{ borderRadius: 16 }} transition={{ type: 'spring', stiffness: 280, damping: 32 }}>
                       <Img src={d.image} alt={d.name} className="h-full w-full object-cover" />
-                      <span className="glass-card absolute left-3 top-3 rounded-full px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-bone">◎ View dish</span>
+                      <span className="absolute left-3 top-3 rounded-full border border-white/25 bg-coal/45 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-cream">◎ View dish</span>
                     </motion.div>
                   )}
                   <span className="block px-2 pb-1.5 pt-3">
@@ -164,6 +165,13 @@ export default function Coverflow() {
                       {d.chefsPick && <span className="text-saffron"> · ★ Chef’s pick</span>}
                     </span>
                   </span>
+                  <motion.span
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 rounded-[22px] bg-coal"
+                    initial={false}
+                    animate={{ opacity: shade }}
+                    transition={{ duration: 0.45, ease: ease.ui }}
+                  />
                 </button>
               </motion.div>
             );

@@ -6,7 +6,6 @@ import { useBag } from './store/bag.js';
 import { initLenis, resetScroll } from './lib/lenis.js';
 import Navbar from './components/Navbar/Navbar.jsx';
 import Preloader from './components/Preloader.jsx';
-import Cursor from './components/Cursor.jsx';
 import BagDrawer from './components/BagDrawer.jsx';
 import FlyToBag from './components/FlyToBag.jsx';
 import Printer from './components/Receipt/Printer.jsx';
@@ -74,7 +73,6 @@ export default function App() {
       <BagDrawer />
       <FlyToBag />
       <Printer />
-      <Cursor />
       {preloader && <Preloader onDone={onIntroDone} />}
       <div className="grain z-grain" aria-hidden />
     </MotionConfig>

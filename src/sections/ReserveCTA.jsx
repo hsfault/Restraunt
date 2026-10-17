@@ -18,7 +18,7 @@ export default function ReserveCTA() {
           Forty-six seats and eight at the hearth counter. Walk-ins welcome at the bar. Deposit of Rs 2,000 holds the table and comes off the bill.
         </p>
         <div className="flex flex-wrap gap-3">
-          <MagneticButton to="/reserve" className="btn-ink h-14 px-7 text-[15px]" cursor="reserve">
+          <MagneticButton to="/reserve" className="btn-ink h-14 px-7 text-[15px]">
             Reserve a table
             <ArrowUpRight className="h-4 w-4" />
           </MagneticButton>

@@ -191,7 +191,7 @@ export default function Navbar() {
               <BagButton />
               {isDesktop ? (
                 <motion.div layout="position" transition={spring}>
-                  <Link to="/reserve" className="btn-bone ml-1 h-11 min-h-0 rounded-xl px-4 text-[14px]" data-cursor="reserve">
+                  <Link to="/reserve" className="btn-bone ml-1 h-11 min-h-0 rounded-xl px-4 text-[14px]">
                     Reserve
                   </Link>
                 </motion.div>

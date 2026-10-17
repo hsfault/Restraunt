@@ -32,7 +32,7 @@ function Item({ item, onOpen }) {
   const shape = SHAPES[item.shape];
   return (
     <figure ref={ref} className={`shrink-0 snap-center ${shape.w} ${OFFSET[item.offset]}`}>
-      <button type="button" onClick={() => onOpen(item)} className="block w-full text-left" data-cursor="view" aria-label={`View ${item.title}`}>
+      <button type="button" onClick={() => onOpen(item)} className="block w-full text-left" aria-label={`View ${item.title}`}>
         <motion.div layoutId={`room-${item.id}`} className="relative overflow-hidden bg-smoke" style={{ aspectRatio: shape.ratio, ...radiusStyle(shape.radius) }}>
           <motion.div
             className="absolute inset-0"

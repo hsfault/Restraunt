@@ -90,16 +90,6 @@ html.scroll-locked {
   overflow: hidden;
 }
 
-/* Custom cursor hides the system arrow on fine pointers, but never on text fields. */
-html.has-cursor,
-html.has-cursor * {
-  cursor: none !important;
-}
-html.has-cursor input,
-html.has-cursor textarea {
-  cursor: text !important;
-}
-
 /* Thin ember scrollbar */
 * {
   scrollbar-width: thin;
@@ -243,22 +233,12 @@ html.has-cursor textarea {
 
 /* Film grain over everything */
 .grain {
+  /* Static: an animated full-screen layer recomposites every frame, even at rest. */
   position: fixed;
-  inset: -50%;
-  width: 200%;
-  height: 200%;
+  inset: 0;
   pointer-events: none;
-  opacity: 0.04;
+  opacity: 0.045;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.09 0 0 0 0 0.07 0 0 0 0 0.05 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  animation: grain 1.2s steps(6) infinite;
-}
-@keyframes grain {
-  0% { transform: translate(0, 0); }
-  20% { transform: translate(-3%, 2%); }
-  40% { transform: translate(2%, -4%); }
-  60% { transform: translate(-4%, -1%); }
-  80% { transform: translate(3%, 3%); }
-  100% { transform: translate(0, 0); }
 }
 
 /* Torn-paper window in the preloader */
